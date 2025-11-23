@@ -16,24 +16,21 @@
 
   .card {
     border: 2px solid #00ff6a;
-    max-width: 600px;
+    max-width: 650px;
     width: 100%;
     padding: 20px;
     box-sizing: border-box;
     line-height: 1.7;
+    font-size: 1.15rem;
     white-space: pre-wrap;
-    font-size: 1.1rem;
   }
 
-  /* 指令列打字動畫 */
+  /* 打字機游標效果 */
   #typewriter {
     border-right: 3px solid #00ff6a;
-    white-space: nowrap;
+    white-space: pre-wrap;
     overflow: hidden;
     animation: caret 0.8s steps(1) infinite;
-    margin-bottom: 20px;
-    display: inline-block;
-    font-size: 1.2rem;
   }
 
   @keyframes caret {
@@ -42,10 +39,16 @@
 </style>
 </head>
 <body>
-  <div class="card">
-    <div id="typewriter"></div>
 
-    <p id="content" style="display:none;">
+<div class="card">
+  <div id="typewriter"></div>
+</div>
+
+<script>
+  // ★ 這裡放所有要打字顯示的內容 ★
+  const fullText = 
+`GJ 31th Birthday...
+
 嗨寶貝！
 又和你一起度過另一個年頭。
 
@@ -53,46 +56,4 @@
 一起逛超市、一起調皮、
 一起什麼都不做、一起感受世界上的美。
 
-自從你搬進來以後，
-生活裡有了更多的「我們」。
-你總是讓我感受到
-內在與外在的穩定感，
-有你在讓我感到很安心。
-
-祝你生日快樂！
-今年也要好好照顧自己、彼此、朋友、家人、
-貓、花草、螞蟻、鼠婦還有寶可夢。
-保持快樂，平安順心。
-
-新的一歲，有我在這裡。
-    </p>
-  </div>
-
-<script>
-  const text = "Jacky 31th Birthday..."; 
-  const typewriter = document.getElementById("typewriter");
-  const content = document.getElementById("content");
-  let index = 0;
-
-  function type() {
-    if (index < text.length) {
-      typewriter.textContent += text.charAt(index);
-      index++;
-      setTimeout(type, 90);
-    } else {
-      // 顯示正文
-      typewriter.style.border = "none";
-      content.style.display = "block";
-    }
-  }
-
-  type();
-</script>
-
-</body>
-</html>
-
-    <div class="footer">— A Little Birthday Message —</div>
-  </div>
-</body>
-</html>
+自從你搬
