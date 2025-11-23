@@ -1,61 +1,96 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Birthday Jacky</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+<title>GJ 31th Birthday</title>
+<style>
+  body {
+    background: #000;
+    color: #00ff6a;
+    font-family: "Courier New", monospace;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+  }
 
-  <style>
-    body {
-      background-color: #000;
-      color: #00FF00;
-      font-family: "Courier New", monospace;
-      margin: 0;
-      padding: 20px;
-    }
+  .card {
+    border: 2px solid #00ff6a;
+    max-width: 600px;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    line-height: 1.7;
+    white-space: pre-wrap;
+    font-size: 1.1rem;
+  }
 
-    .card-container {
-      max-width: 600px;
-      margin: 0 auto;
-      border: 2px solid #00FF00;
-      padding: 20px;
-      box-sizing: border-box;
-    }
+  /* 指令列打字動畫 */
+  #typewriter {
+    border-right: 3px solid #00ff6a;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: caret 0.8s steps(1) infinite;
+    margin-bottom: 20px;
+    display: inline-block;
+    font-size: 1.2rem;
+  }
 
-    h1 {
-      font-size: 1.6rem;
-      margin-top: 0;
-      margin-bottom: 1rem;
-      text-align: center;
-      color: #00FF00;
-    }
-
-    p {
-      font-size: 1.1rem;
-      line-height: 1.7;
-      margin: 0 0 1rem 0;
-      word-break: break-all;
-    }
-
-    .footer {
-      text-align: center;
-      margin-top: 2rem;
-      font-size: .9rem;
-      color: #008800;
-    }
-  </style>
+  @keyframes caret {
+    50% { border-color: transparent; }
+  }
+</style>
 </head>
-
 <body>
-  <div class="card-container">
-    <h1>◆ GJ 31th Birthday ◆</h1>
+  <div class="card">
+    <div id="typewriter"></div>
 
-    <p>祝你生日快樂！</p>
-    <p>今年也要好好照顧自己，</p>
-    <p>保持快樂、平安順心。</p>
-    <p>新的一歲，有我在這裡替你加油。</p>
+    <p id="content" style="display:none;">
+嗨寶貝！
+又和你一起度過另一個年頭。
 
-    <p>Happy 31st ✨</p>
+喜歡和你一起吃喝、一起看電視、
+一起逛超市、一起調皮、
+一起什麼都不做、一起感受世界上的美。
+
+自從你搬進來以後，
+生活裡有了更多的「我們」。
+你總是讓我感受到
+內在與外在的穩定感，
+有你在讓我感到很安心。
+
+祝你生日快樂！
+今年也要好好照顧自己、彼此、朋友、家人、
+貓、花草、螞蟻、鼠婦還有寶可夢。
+保持快樂，平安順心。
+
+新的一歲，有我在這裡。
+    </p>
+  </div>
+
+<script>
+  const text = "Jacky 31th Birthday..."; 
+  const typewriter = document.getElementById("typewriter");
+  const content = document.getElementById("content");
+  let index = 0;
+
+  function type() {
+    if (index < text.length) {
+      typewriter.textContent += text.charAt(index);
+      index++;
+      setTimeout(type, 90);
+    } else {
+      // 顯示正文
+      typewriter.style.border = "none";
+      content.style.display = "block";
+    }
+  }
+
+  type();
+</script>
+
+</body>
+</html>
 
     <div class="footer">— A Little Birthday Message —</div>
   </div>
