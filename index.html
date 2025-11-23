@@ -2,137 +2,106 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>31 歲生日快樂 — Jacky</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jacky 31 歲生日快樂</title>
+
   <style>
-    :root{
-      --bg:#0b0b0d;
-      --panel:#0f1720;
-      --accent:#3ddc84;
-      --muted:#9aa3ad;
-      --card:#0b1220;
-    }
-    html,body{
-      height:100%;
-      margin:0;
-      background: linear-gradient(180deg, #071017 0%, #0b0b0d 100%);
-      color: #e6eef1;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      font-family: "SFMono-Regular", "Menlo", "Monaco", "Noto Sans Mono", monospace;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:20px;
-      box-sizing:border-box;
+    body {
+      margin: 0;
+      padding: 16px;
+      background: #000;
+      color: #d0d0d0;
+      font-family: "Menlo", "Courier New", monospace;
+      display: flex;
+      justify-content: center;
     }
 
-    /* 主卡片 (PTT 帖子風) */
-    .ptt-card{
-      width:100%;
-      max-width:720px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      border:1px solid rgba(255,255,255,0.04);
-      box-shadow: 0 10px 30px rgba(2,6,23,0.6);
-      border-radius:8px;
-      padding:18px;
-      box-sizing:border-box;
+    .card {
+      width: 100%;
+      max-width: 480px;
+      background: #111;
+      border: 1px solid #333;
+      padding: 16px;
+      border-radius: 4px;
+      box-sizing: border-box;
     }
 
-    /* 上方資訊列 */
-    .meta{
-      display:flex;
-      gap:8px;
-      align-items:center;
-      font-size:0.95rem;
-      color:var(--muted);
-      margin-bottom:12px;
-    }
-    .meta .board{
-      color:var(--accent);
-      font-weight:700;
-      letter-spacing:0.06em;
-      padding:2px 8px;
-      background:rgba(61,220,132,0.06);
-      border-radius:4px;
-    }
-    .meta .info{
-      color:var(--muted);
+    .meta {
+      font-size: 0.85rem;
+      line-height: 1.4;
+      margin-bottom: 12px;
+      color: #888;
     }
 
-    /* 標題 */
-    .title{
-      font-size:1.15rem;
-      color:#fff;
-      font-weight:700;
-      margin:6px 0 12px 0;
+    .board {
+      color: #00ffa2;
     }
 
-    /* PTT 內容區 (等寬字體) */
-    .post{
-      background: rgba(0,0,0,0.25);
-      border:1px solid rgba(255,255,255,0.03);
-      padding:14px;
-      border-radius:6px;
-      line-height:1.6;
-      font-size:1rem;
-      color:#eaf6f1;
-      white-space:pre-wrap;
-      word-break:break-word;
+    .title {
+      color: #fff;
+      font-size: 1.1rem;
+      margin: 6px 0 12px 0;
+      font-weight: bold;
     }
 
-    /* ASCII 框樣式 */
-    .ascii-box{
-      margin:8px 0 0 0;
-      padding:10px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));
-      border-radius:4px;
-      font-size:0.98rem;
-      color:#cfeee1;
+    .post {
+      background: #000;
+      border: 1px solid #444;
+      padding: 10px;
+      border-radius: 4px;
+      white-space: pre-wrap;
+      font-size: 0.95rem;
+      line-height: 1.55;
     }
 
-    .gifts{
-      margin:10px 0 0 0;
-      display:flex;
-      flex-direction:column;
-      gap:6px;
-      font-size:1rem;
+    .footer {
+      margin-top: 14px;
+      font-size: 0.85rem;
+      color: #666;
+      text-align: center;
     }
 
-    .footer{
-      margin-top:12px;
-      font-size:0.88rem;
-      color:var(--muted);
-    }
-
-    /* 手機上文字稍微放大 */
-    @media (max-width:420px){
-      .title{ font-size:1.05rem; }
-      .post{ font-size:1.04rem; }
-      .gifts{ font-size:1.06rem; }
+    /* 手機字體微調 */
+    @media (max-width: 420px) {
+      .post { font-size: 1rem; }
+      .title { font-size: 1.05rem; }
     }
   </style>
 </head>
+
 <body>
-  <div class="ptt-card">
+  <div class="card">
+
     <div class="meta">
-      <div class="board">板名：Birthday</div>
-      <div class="info">作者：you / 看板：Birthday / 標題：[祝福] 31 歲生日快樂 — Jacky</div>
-      <div style="margin-left:auto; color:var(--muted);" id="timeString"></div>
+      <span class="board">◆ Birthday</span><br>
+      作者 you　標題 Jacky 31 歲生日快樂<br>
+      時間 <span id="time"></span>
     </div>
 
-    <div class="title">[祝福] 31 歲生日快樂 — Jacky</div>
+    <div class="title">[祝福] Jacky 31 歲生日快樂</div>
 
     <div class="post">
-┌───────────────────────────────────┐
-│  → To: GJ         │
-│                                   │
-│  祝你生日快樂！                    │
-│                                   │
-└───────────────────────────────────┘
+┌──────────────────────┐
+│  To: Jacky (31)       │
+│                       │
+│  祝你生日快樂！        │
+│  今年送上專屬驚喜✨     │
+│                       │
+│                       │
+│  兌換期限：2026.01.31   │
+└──────────────────────┘
     </div>
 
-    <div class="ascii-box">
-      <div style="font-weight:700; margin-bottom:6px;">* 小驚喜提示 *</div>
-      <div>靠近 NFC → 打開網頁 → 按下「領取我的禮物」</div>
-      <div style="margin-top:8px; color:var(--muted);">（這是一張能放進皮件的
+    <div class="footer">送給 Jacky — 祝你天天都有好事發生 ✨</div>
+
+  </div>
+
+<script>
+  const n = new Date();
+  const f = (x) => (x < 10 ? "0" + x : x);
+  document.getElementById("time").textContent =
+    `${n.getFullYear()}/${f(n.getMonth()+1)}/${f(n.getDate())} ${f(n.getHours())}:${f(n.getMinutes())}`;
+</script>
+
+</body>
+</html>
