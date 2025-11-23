@@ -1,75 +1,138 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
-  <head>
-    <meta charset="UTF-8">
-    <title>大寶貝生日快樂 🎉</title>
-    <style>
-      body {
-        margin: 0;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        font-family: "Noto Sans TC", sans-serif;
-        background: linear-gradient(135deg, #FFD5C2, #FFE6CC);
-        overflow: hidden;
-        color: #4A2C2A;
-      }
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>31 歲生日快樂 — Jacky</title>
+  <style>
+    :root{
+      --bg:#0b0b0d;
+      --panel:#0f1720;
+      --accent:#3ddc84;
+      --muted:#9aa3ad;
+      --card:#0b1220;
+    }
+    html,body{
+      height:100%;
+      margin:0;
+      background: linear-gradient(180deg, #071017 0%, #0b0b0d 100%);
+      color: #e6eef1;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      font-family: "SFMono-Regular", "Menlo", "Monaco", "Noto Sans Mono", monospace;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:20px;
+      box-sizing:border-box;
+    }
 
-      h1 {
-        font-size: 8vw;
-        margin-bottom: 1rem;
-      }
+    /* 主卡片 (PTT 帖子風) */
+    .ptt-card{
+      width:100%;
+      max-width:720px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border:1px solid rgba(255,255,255,0.04);
+      box-shadow: 0 10px 30px rgba(2,6,23,0.6);
+      border-radius:8px;
+      padding:18px;
+      box-sizing:border-box;
+    }
 
-      p {
-        font-size: 5vw;
-        line-height: 1.6;
-        margin: 0.2em 0;
-      }
+    /* 上方資訊列 */
+    .meta{
+      display:flex;
+      gap:8px;
+      align-items:center;
+      font-size:0.95rem;
+      color:var(--muted);
+      margin-bottom:12px;
+    }
+    .meta .board{
+      color:var(--accent);
+      font-weight:700;
+      letter-spacing:0.06em;
+      padding:2px 8px;
+      background:rgba(61,220,132,0.06);
+      border-radius:4px;
+    }
+    .meta .info{
+      color:var(--muted);
+    }
 
-      .floating {
-        position: absolute;
-        bottom: -5%;
-        font-size: 2.5rem;
-        opacity: 0.8;
-        animation: floatUp linear infinite;
-      }
+    /* 標題 */
+    .title{
+      font-size:1.15rem;
+      color:#fff;
+      font-weight:700;
+      margin:6px 0 12px 0;
+    }
 
-      @keyframes floatUp {
-        from {
-          transform: translateY(0) rotate(0deg);
-          opacity: 1;
-        }
-        to {
-          transform: translateY(-110vh) rotate(360deg);
-          opacity: 0;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <h1>🎉 寶貝生日快樂 🎉</h1>
-    <p>\ 生日好禮 3 選 1 /</p>
-    <p>🎁 測試測試測試</p>
-    <p>👟 測試測試測試</p>
-    <p>👜 測試測試測試</p>
-    <p style="margin-top:1.5rem; font-size:4vw; opacity:0.8;">兌換期限：2026.01.31</p>
+    /* PTT 內容區 (等寬字體) */
+    .post{
+      background: rgba(0,0,0,0.25);
+      border:1px solid rgba(255,255,255,0.03);
+      padding:14px;
+      border-radius:6px;
+      line-height:1.6;
+      font-size:1rem;
+      color:#eaf6f1;
+      white-space:pre-wrap;
+      word-break:break-word;
+    }
 
-    <script>
-      const emojis = ["🎂", "🎉", "🎈", "💝", "🧁", "🌸"];
-      const num = 15;
-      for (let i = 0; i < num; i++) {
-        const el = document.createElement("div");
-        el.classList.add("floating");
-        el.textContent = emojis[Math.floor(Math.random() * emojis.length)];
-        el.style.left = Math.random() * 100 + "vw";
-        el.style.animationDuration = 8 + Math.random() * 6 + "s";
-        el.style.animationDelay = Math.random() * 5 + "s";
-        el.style.fontSize = 1.5 + Math.random() * 2 + "rem";
-        document.body.appendChild(el);
-      }
-    </script>
-  </body>
-</html>
+    /* ASCII 框樣式 */
+    .ascii-box{
+      margin:8px 0 0 0;
+      padding:10px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));
+      border-radius:4px;
+      font-size:0.98rem;
+      color:#cfeee1;
+    }
+
+    .gifts{
+      margin:10px 0 0 0;
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+      font-size:1rem;
+    }
+
+    .footer{
+      margin-top:12px;
+      font-size:0.88rem;
+      color:var(--muted);
+    }
+
+    /* 手機上文字稍微放大 */
+    @media (max-width:420px){
+      .title{ font-size:1.05rem; }
+      .post{ font-size:1.04rem; }
+      .gifts{ font-size:1.06rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="ptt-card">
+    <div class="meta">
+      <div class="board">板名：Birthday</div>
+      <div class="info">作者：you / 看板：Birthday / 標題：[祝福] 31 歲生日快樂 — Jacky</div>
+      <div style="margin-left:auto; color:var(--muted);" id="timeString"></div>
+    </div>
+
+    <div class="title">[祝福] 31 歲生日快樂 — Jacky</div>
+
+    <div class="post">
+┌───────────────────────────────────┐
+│  → To: GJ         │
+│                                   │
+│  祝你生日快樂！                    │
+│                                   │
+└───────────────────────────────────┘
+    </div>
+
+    <div class="ascii-box">
+      <div style="font-weight:700; margin-bottom:6px;">* 小驚喜提示 *</div>
+      <div>靠近 NFC → 打開網頁 → 按下「領取我的禮物」</div>
+      <div style="margin-top:8px; color:var(--muted);">（這是一張能放進皮件的
