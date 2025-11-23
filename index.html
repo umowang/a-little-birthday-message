@@ -1,107 +1,63 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Jacky 31 歲生日快樂</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Jacky</title>
 
   <style>
     body {
+      background-color: #000;
+      color: #00FF00;
+      font-family: "Courier New", monospace;
       margin: 0;
-      padding: 16px;
-      background: #000;
-      color: #d0d0d0;
-      font-family: "Menlo", "Courier New", monospace;
-      display: flex;
-      justify-content: center;
+      padding: 20px;
     }
 
-    .card {
-      width: 100%;
-      max-width: 480px;
-      background: #111;
-      border: 1px solid #333;
-      padding: 16px;
-      border-radius: 4px;
+    .card-container {
+      max-width: 600px;
+      margin: 0 auto;
+      border: 2px solid #00FF00;
+      padding: 20px;
       box-sizing: border-box;
     }
 
-    .meta {
-      font-size: 0.85rem;
-      line-height: 1.4;
-      margin-bottom: 12px;
-      color: #888;
+    h1 {
+      font-size: 1.6rem;
+      margin-top: 0;
+      margin-bottom: 1rem;
+      text-align: center;
+      color: #00FF00;
     }
 
-    .board {
-      color: #00ffa2;
-    }
-
-    .title {
-      color: #fff;
+    p {
       font-size: 1.1rem;
-      margin: 6px 0 12px 0;
-      font-weight: bold;
-    }
-
-    .post {
-      background: #000;
-      border: 1px solid #444;
-      padding: 10px;
-      border-radius: 4px;
-      white-space: pre-wrap;
-      font-size: 0.95rem;
-      line-height: 1.55;
+      line-height: 1.7;
+      margin: 0 0 1rem 0;
+      word-break: break-all;
     }
 
     .footer {
-      margin-top: 14px;
-      font-size: 0.85rem;
-      color: #666;
       text-align: center;
-    }
-
-    /* 手機字體微調 */
-    @media (max-width: 420px) {
-      .post { font-size: 1rem; }
-      .title { font-size: 1.05rem; }
+      margin-top: 2rem;
+      font-size: .9rem;
+      color: #008800;
     }
   </style>
 </head>
 
 <body>
-  <div class="card">
+  <div class="card-container">
+    <h1>◆ Jacky 31th Birthday ◆</h1>
 
-    <div class="meta">
-      <span class="board">◆ Birthday</span><br>
-      作者 you　標題 Jacky 31 歲生日快樂<br>
-      時間 <span id="time"></span>
-    </div>
+    <p>祝你生日快樂！</p>
+    <p>今年也要好好照顧自己，</p>
+    <p>保持快樂、平安順心。</p>
+    <p>新的一歲，有我在這裡替你加油。</p>
 
-    <div class="title">[祝福] Jacky 31 歲生日快樂</div>
+    <p>Happy 31st, Jacky ✨</p>
 
-    <div class="post">
-┌──────────────────────┐
-│  To: Jacky (31)       │
-│                       │
-│  祝你生日快樂！        │
-│  今年送上專屬驚喜✨     │
-│                       │
-│                       │
-│  兌換期限：2026.01.31   │
-└──────────────────────┘
-    </div>
-
-    <div class="footer">送給 Jacky — 祝你天天都有好事發生 ✨</div>
-
+    <div class="footer">— End of message —</div>
   </div>
-
-<script>
-  const n = new Date();
-  const f = (x) => (x < 10 ? "0" + x : x);
-  document.getElementById("time").textContent =
-    `${n.getFullYear()}/${f(n.getMonth()+1)}/${f(n.getDate())} ${f(n.getHours())}:${f(n.getMinutes())}`;
-</script>
-
 </body>
 </html>
