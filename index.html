@@ -56,4 +56,40 @@
 一起逛超市、一起調皮、
 一起什麼都不做、一起感受世界上的美。
 
-自從你搬
+自從你搬進來以後，
+生活裡有了更多的「我們」。
+你總是讓我感受到
+內在與外在的穩定感，
+有你在真的很安心。
+
+祝你生日快樂！
+今年也要好好照顧自己、彼此、
+朋友、家人。
+保持快樂，平安順心。
+
+新的一歲，有我在這裡。
+
+----------------------------------------
+A Little Birthday Message
+`;
+
+  const speed = 55; // 打字速度（毫秒）
+  let i = 0;
+  const output = document.getElementById("typewriter");
+
+  function type() {
+    if (i < fullText.length) {
+      output.textContent += fullText.charAt(i);
+      i++;
+      setTimeout(type, speed);
+    } else {
+      // 打完後移除游標
+      output.style.border = "none";
+    }
+  }
+
+  type();
+</script>
+
+</body>
+</html>
